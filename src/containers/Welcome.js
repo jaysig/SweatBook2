@@ -1,38 +1,45 @@
 import React from 'react';
+import LinearGradient from 'react-native-linear-gradient';
+import Button from 'apsl-react-native-button';
 import {
   Text,
   View,
-  StyleSheet,
-  TouchableOpacity
+  StyleSheet
 } from 'react-native';
 
 export const Welcome = (props) => (
-  <View style={{ flex: 1 }}>
-    <View style={styles.titleContianer}>
-      <Text style={styles.title}>
-        Sweatbook
-      </Text>
-    </View>
-    <View style={styles.lastWorkoutContainer}>
-      <Text style={styles.lastWorkoutTitle}>
-        Log your fitness
-      </Text>
-    </View>
-    <View style={{ padding: 30 }}>
-      <TouchableOpacity
-        onPress={props.startWorkout}
-        style={styles.button}
-      >
-        <Text>Start Workout</Text>
-      </TouchableOpacity>
-    </View>
+  <View style={{flex: 1}}>
+    <LinearGradient
+      colors={['#4A148C', '#880E4F']}
+      style={styles.container}
+    >
+      <View style={styles.titleContianer}>
+        <Text style={styles.title}>
+          Sweatbook
+        </Text>
+      </View>
+      <View style={styles.lastWorkoutContainer}>
+        <Text style={styles.lastWorkoutTitle}>
+          Your last workout
+        </Text>
+      </View>
+      <View style={{padding: 30 }}>
+        <Button
+          onPress={props.onStartWorkOut}
+          style={styles.button}
+          textStyle={styles.buttonText}
+          children={'Start Workout'}
+        />
+      </View>
+    </LinearGradient>
   </View>
 );
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: 'transparent'
   },
   titleContianer: {
     justifyContent: 'center',
@@ -42,7 +49,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 48,
     fontWeight: '500',
-    color: 'blue',
+    color: '#F3F3F3',
     textAlign: 'center'
   },
   lastWorkoutContainer: {
@@ -51,7 +58,7 @@ const styles = StyleSheet.create({
   lastWorkoutTitle: {
     fontSize: 30,
     fontWeight: '100',
-    color: 'blue'
+    color: '#F3F3F3'
   },
   button: {
     borderColor: '#EADCDC',
