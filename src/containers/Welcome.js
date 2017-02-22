@@ -25,7 +25,7 @@ export const Welcome = (props) => (
       </View>
       <View style={{padding: 30 }}>
         <Button
-          onPress={props.onStartWorkOut}
+          onPress={props.startWorkout}
           style={styles.button}
           textStyle={styles.buttonText}
           children={'Start Workout'}
